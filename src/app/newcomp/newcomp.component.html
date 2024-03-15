@@ -1,0 +1,30 @@
+<div class="bg-slate-200 w-[600px] m-auto mt-[150px] h-[350px]">
+    <h2 class="font-semibold text-2xl text-center m-2 p-2">Translation</h2>
+    <div class="mx-[200px] mt-[30px]">
+      <label for="sourceLanguage"class="font-semibold m-2 mx-4">From :</label>
+      <select id="sourceLanguage" [(ngModel)]="sourceLanguage">
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <!-- Add more language options as needed -->
+      </select>
+    </div>
+    <div class="mx-[200px] mt-[30px]">
+      <label for="targetLanguage" class="font-semibold  mx-4 ">To :</label>
+      <select id="targetLanguage" [(ngModel)]="targetLanguage"class="ms-5">
+        <option value="ta">Tamil</option>
+        <option value="fr">French</option>
+        <option value = "hi">Hindi"</option>
+      </select>
+    </div>
+    <div class="mt-[30px] mx-[120px]">
+      <label  class="font-semibold  mx-4"for="textToTranslate">Text to Translate:</label>
+      <input type="text" id="textToTranslate" [(ngModel)]="textToTranslate">
+    </div>
+    <button (click)="translate()"class="bg-slate-500 ms-[150px] mt-[30px] p-1 w-[300px]">Translate</button>
+  </div>
+  
+  <div class="bg-slate-200 w-[600px] m-auto mt-4" *ngIf="translationResult">
+    <h2 class="font-semibold text-2xl text-center m-2 p-2">Translated Text:</h2>
+    <p class="text-center p-2">{{ translationResult }}</p>
+  </div>
+  
